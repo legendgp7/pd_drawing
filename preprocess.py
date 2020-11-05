@@ -2,7 +2,7 @@ import cv2
 from matplotlib import pyplot as plt
 import numpy as np
 
-def binarize(img,bin,c=30,verbose=False):
+def binarize(img, bin, c=30, verbose=False, detail=True):
     imgf = img.flatten()
     his = np.histogram(imgf, bin)[0]
     diff = his[1:255] - his[0:254]
@@ -11,7 +11,15 @@ def binarize(img,bin,c=30,verbose=False):
         plt.hist(imgf,bin)
         plt.title("histogram")
         plt.show()
-    return cv2.threshold(img, th, 255, cv2.THRESH_BINARY)[1]
+
+    if detail:
+        binary = cv2.threshold(img, th, 1, cv2.THRESH_BINARY_INV)[1]
+        img_filtered = binary * img
+        min_val = img.min()
+        max_val = img.max()
+        return (img_filtered - min_val) / (max_val - min_val)
+    else:
+        return cv2.threshold(img, th, 255, cv2.THRESH_BINARY)[1]
 
 
 img = cv2.imread("sample.png",0)
