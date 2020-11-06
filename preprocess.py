@@ -2,6 +2,7 @@
 import cv2
 from matplotlib import pyplot as plt
 import numpy as np
+import sys
 
 def show(img):
     plt.imshow(img)
@@ -31,7 +32,7 @@ def denoise(img, neighbor=2):
     return img
 
 
-def binarization(img, bin, c=12, verbose=False, detail=True, denoise_on=True):
+def binarization(img, bin, c=12, verbose=False, detail=True, denoise_on=True, save_flag=False):
     imgf = img.flatten()
     his = np.histogram(imgf, bin)[0]
     d1 = his[1:255] - his[0:254]
@@ -43,7 +44,10 @@ def binarization(img, bin, c=12, verbose=False, detail=True, denoise_on=True):
     if verbose:
         plt.hist(imgf,bin)
         plt.title("histogram")
-        plt.show()
+        if save_flag:
+            plt.savefig('Demo_origin_histogram.png')
+        else:
+            plt.show()
 
     if detail:
         binary = cv2.threshold(img, th, 1, cv2.THRESH_BINARY_INV)[1]
@@ -60,11 +64,18 @@ def binarization(img, bin, c=12, verbose=False, detail=True, denoise_on=True):
 
 
 if __name__ == "__main__":
+
+    save_flag = "-s" in sys.argv
+
     img = cv2.imread("sample.png",0)
     bin = np.arange(256)
-    img2 = binarization(img,bin,verbose=True)
-    cv2.imshow("Demo(Press 'ESC' to quit.)",img2)
-    print("Press 'ESC' to quit.")
-    key = cv2.waitKey(0)
-    if key == 27:
-        cv2.destroyAllWindows()
+    img2 = binarization(img,bin,verbose=True, save_flag=save_flag)
+
+    if save_flag:
+        cv2.imwrite('Demo_binarization.png',img2*255)
+    else:
+        cv2.imshow("Demo(Press 'ESC' to quit.)",img2)
+        print("Press 'ESC' to quit.")
+        key = cv2.waitKey(0)
+        if key == 27:
+            cv2.destroyAllWindows()
