@@ -23,11 +23,12 @@ def binarization(img, bin, c=30, verbose=False, detail=True):
         return cv2.threshold(img, th, 255, cv2.THRESH_BINARY)[1]
 
 
-img = cv2.imread("sample.png",0)
-bin = np.arange(256)
-img2 = binarization(img,bin,verbose=True)
-cv2.imshow("Demo(Press 'ESC' to quit.)",img2)
-print("Press 'ESC' to quit.")
-key = cv2.waitKey(0)
-if key == 27:
-    cv2.destroyAllWindows()
+if __name__ == "__main__":
+    img = cv2.imread("sample.png",0)
+    bin = np.arange(256)
+    img2 = binarization(img,bin,verbose=True)
+    cv2.imshow("Demo(Press 'ESC' to quit.)",img2)
+    print("Press 'ESC' to quit.")
+    key = cv2.waitKey(0)
+    if key == 27:
+        cv2.destroyAllWindows()
