@@ -2,10 +2,9 @@ import preprocess as pp
 import numpy as np
 import os
 import cv2
+import configparser
 
-def readFile(filepath, bin, verbose=False):
-    input = []
-    output = []
+def readFile(input, output, filepath, bin, n, verbose=False):
 
     dir = os.listdir(filepath)
     for i in dir:
@@ -13,8 +12,13 @@ def readFile(filepath, bin, verbose=False):
         name_splitted = os.path.splitext(i)
 
         if name_splitted[1] == '.png':
-            img = cv2.imread(filepath+i, 0)
+            n["cnt"] += + 1
+            print("Image %d ..."% n["cnt"])
+            img = cv2.imread(filepath + "/" + i, 0)
+            if img.shape[0] != 256 or img.shape[1] != 256:
+                img = cv2.resize(img, (256,256))
             img = pp.binarization(img, bin)
+
             if verbose:
                 cv2.imshow("Demo(Press 'ESC' to quit.)", img)
                 print("Press 'ESC' to quit.")
@@ -22,43 +26,63 @@ def readFile(filepath, bin, verbose=False):
                 if key == 27:
                     cv2.destroyAllWindows()
             else:
-                input.append([img])
+                input.append(np.array([img]))
+
 
             # Label the output. Health:0, Parkinson:1.
             if "H" in name_splitted[0]:
-                output.append([0])
+                output.append(np.array([0]))
             elif "P" in name_splitted[0]:
-                output.append([1])
-            elif name_splitted[0] == "sample"
+                output.append(np.array([1]))
+            elif name_splitted[0] == "sample":
+                output.append(np.array([0]))
             else:
                 print("Unlabelled sample. Fix me please: "+filepath+i)
 
     return
 
 
-def makeDataset(filepath):
+def makeDataset(bin, type="s"):
     """
-    input: black 0, none 1, white 2, next_move 3
-    output: black -1, none 0, white 1
-    :param filepath: string with extensions if there are
-    :return:
+    :param type: spiral "s"; wave "w";
+    :return: x training set
+             y testing set
     """
-    str = ""
+    n = {"cnt": 0}
+    x = []
+    y = []
 
-    input0 = []
-    input1 = []
-    output0 = []
-    output1 =[]
+    config = configparser.ConfigParser()
+    config.read('path.ini')
+    abs_path = config["absolute"]["path"]
+    if type == "w":
+        print("Reading wave images...")
+        readFile(x, y, abs_path + config["wave"]["healthytrain"], bin, n)
+        readFile(x, y, abs_path + config["wave"]["healthytest"], bin, n)
+        readFile(x, y, abs_path + config["wave"]["parkinsontrain"], bin, n)
+        readFile(x, y, abs_path + config["wave"]["parkinsontest"], bin, n)
+    elif type == "t":
+        readFile(x, y, abs_path + config["spiral"]["healthytest"], bin, n)
+    else:
+        print("Reading spiral images...")
+        readFile(x, y, abs_path + config["spiral"]["healthytrain"], bin, n)
+        readFile(x, y, abs_path + config["spiral"]["healthytest"], bin, n)
+        readFile(x, y, abs_path + config["spiral"]["parkinsontrain"], bin, n)
+        readFile(x, y, abs_path + config["spiral"]["parkinsontest"], bin, n)
 
 
-    input0 = np.array(input0,dtype = np.float32)
-    input1 = np.array(input1, dtype = np.float32)
-    output0 = np.array(output0,dtype = np.int64)
-    output1 = np.array(output1, dtype=np.int64)
+    x = np.array(x, dtype = np.float32)
+    y = np.array(y, dtype = np.int64)
 
-    return input0,input1,output0,output1
+    return x, y
 
 
 if __name__ == "__main__":
+
     bin = np.arange(256)
-    print(readFile("./", bin, verbose=True))
+    x, y = makeDataset(bin)
+
+
+
+    print("Input shape: ", x.shape)
+    print("Output shape: ", y.shape)
