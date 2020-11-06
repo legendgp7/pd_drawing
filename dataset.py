@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import preprocess as pp
 import numpy as np
 import os
