@@ -3,3 +3,5 @@
 data
 path.ini
 untitled.ipynb
+__pycache__
+.ipynb_checkpoints
