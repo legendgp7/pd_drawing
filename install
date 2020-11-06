@@ -1,0 +1,3 @@
+echo "* This is a shell script to install dependencies for Python. *"
+pip install matplotlib, opencv-python, tensorflow, configparser
+echo End
