@@ -13,7 +13,10 @@ def readFile(input, output, filepath, bin, n, verbose=False):
 
         if name_splitted[1] == '.png':
             n["cnt"] += + 1
-            print("Image %d ..."% n["cnt"])
+
+            if n["cnt"]%10 == 0:
+                print("%d images loaded..."% n["cnt"])
+
             img = cv2.imread(filepath + "/" + i, 0)
             if img.shape[0] != 256 or img.shape[1] != 256:
                 img = cv2.resize(img, (256,256))
@@ -70,7 +73,7 @@ def makeDataset(bin, type="s"):
         readFile(x, y, abs_path + config["spiral"]["parkinsontrain"], bin, n)
         readFile(x, y, abs_path + config["spiral"]["parkinsontest"], bin, n)
 
-
+    print("Dataset prepared (%d images)"%n["cnt"])
     x = np.array(x, dtype = np.float32)
     y = np.array(y, dtype = np.int64)
 
@@ -78,11 +81,8 @@ def makeDataset(bin, type="s"):
 
 
 if __name__ == "__main__":
-
     bin = np.arange(256)
     x, y = makeDataset(bin)
-
-
 
     print("Input shape: ", x.shape)
     print("Output shape: ", y.shape)

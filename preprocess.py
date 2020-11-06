@@ -2,12 +2,43 @@ import cv2
 from matplotlib import pyplot as plt
 import numpy as np
 
+def show(img):
+    plt.imshow(img)
+    plt.axis('off')
+    plt.show()
 
-def binarization(img, bin, c=30, verbose=False, detail=True):
+def denoise(img, neighbor=2):
+    """
+    foreground pixel: 1 ; background pixel: 0
+    """
+
+    imgp = np.pad(img, 1, 'constant', constant_values=0)
+
+    leny = img.shape[0]
+    lenx = img.shape[1]
+    for i in range(lenx):
+        for j in range(leny):
+            if img[j,i] == 0:
+                continue
+            elif img[j,i] == 1:
+                n = np.sum(imgp[j:j+3,i:i+3])
+                img[j,i] = 1 if n > neighbor else 0
+            else:
+                print("Warning: the foreground and background pixel should be 1 and 0 resepctively!")
+                break
+
+    return img
+
+
+def binarization(img, bin, c=12, verbose=False, detail=True, denoise_on=True):
     imgf = img.flatten()
     his = np.histogram(imgf, bin)[0]
-    diff = his[1:255] - his[0:254]
-    th = np.argmax(diff) - c
+    d1 = his[1:255] - his[0:254]
+    d2 = d1[1:254] - d1[0:253]
+
+    idx_peak = np.argmax(his)
+    th = np.argmax(d2[0:idx_peak]) - c
+
     if verbose:
         plt.hist(imgf,bin)
         plt.title("histogram")
@@ -15,6 +46,10 @@ def binarization(img, bin, c=30, verbose=False, detail=True):
 
     if detail:
         binary = cv2.threshold(img, th, 1, cv2.THRESH_BINARY_INV)[1]
+
+        if denoise_on:
+            binary = denoise(binary)
+
         img_filtered = binary * img
         min_val = img.min()
         max_val = img.max()
