@@ -74,9 +74,9 @@ def makeDataset(bin, type="s"):
         readFile(x, y, abs_path + config["spiral"]["parkinsontrain"], bin, n)
         readFile(x, y, abs_path + config["spiral"]["parkinsontest"], bin, n)
 
-    print("Dataset prepared (%d images)"%n["cnt"])
     x = np.array(x, dtype = np.float32)
     y = np.array(y, dtype = np.int64)
+    print("Dataset prepared (%d images)\n" % n["cnt"])
 
     return x, y
 
@@ -85,5 +85,5 @@ if __name__ == "__main__":
     bin = np.arange(256)
     x, y = makeDataset(bin)
 
-    print("Input shape: ", x.shape)
-    print("Output shape: ", y.shape)
+    print("Input shape (Number of samples, Channel, Y_size, X_size): ", x.shape)
+    print("Output shape (Number of samples, Output dimension): ", y.shape)
