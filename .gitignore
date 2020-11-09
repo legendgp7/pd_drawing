@@ -7,3 +7,4 @@ __pycache__
 .ipynb_checkpoints
 Demo_binarization.png
 Demo_origin_histogram.png
+processed_dataset

@@ -9,39 +9,47 @@ import numpy as np
 import sys
 
 bin = np.arange(256)
-x, y =ds.makeDataset(bin,type="s")
+x,y =ds.readDataset(bin,type="s")
 
+#train_images, train_labels,test_images,test_labels =ds.readDataset(bin,type="s")
 order = np.random.permutation(y.shape[0])
 x = x[order, :, :, :]
 y = y[order, :]
-div = int(0.75*y.shape[0])
+div = int(0.7*y.shape[0])
 
 train_images, test_images = x[0:div,:,:,:] / 255.0, x[div:,:,:,:] / 255.0
 train_labels, test_labels = y[0:div,:], y[div:,:]
 
+"""
 if "-v" in sys.argv:
     class_names = ['Healthy', 'Parkinson']
 
     plt.figure(figsize=(10,10))
-    for i in range(102):
-        plt.subplot(5,21,i+1)
+    for i in range(26):
+        plt.subplot(5,6,i+1)
         plt.xticks([])
         plt.yticks([])
         plt.grid(False)
-        plt.imshow(train_images[i], cmap=plt.cm.binary)
+        plt.imshow(test_images[i], cmap=plt.cm.binary)
 
-        plt.xlabel(class_names[train_labels[i][0]])
+        plt.xlabel(class_names[test_labels[i][0]])
     plt.show()
+"""
+data_augmentation = tf.keras.Sequential([
+  layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
+  layers.experimental.preprocessing.RandomRotation(0.2),
+])
 
 model = models.Sequential()
-model.add(layers.Conv2D(8, (11, 11), activation='relu', input_shape=(256, 256, 1)))
+#model.add(data_augmentation)
+"""model.add(layers.Conv2D(4, (3, 3), activation='relu', input_shape=(32, 32, 1)))
 model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Conv2D(16, (7, 7), activation='relu'))
+model.add(layers.Conv2D(8, (3, 3), activation='relu'))
 model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Conv2D(32, (5, 5), activation='relu'))
+model.add(layers.Conv2D(16, (3, 3), activation='relu'))"""
 
-model.add(layers.Flatten())
-model.add(layers.Dense(64, activation='relu'))
+model.add(layers.Flatten(input_shape=(32, 32, 1)))
+model.add(layers.Dense(512, activation='relu'))
 model.add(layers.Dense(2))
 
 model.summary()

@@ -55,10 +55,13 @@ def binarization(img, bin, c=12, verbose=False, detail=True, denoise_on=True, sa
         if denoise_on:
             binary = denoise(binary)
 
-        img_filtered = binary * img
+        img_filtered = binary * 255
+
+        #img_filtered = binary * img
         min_val = img.min()
         max_val = img.max()
-        return (img_filtered - min_val) / (max_val - min_val)
+        #return (img_filtered - min_val) / (max_val - min_val)
+        return img
     else:
         return cv2.threshold(img, th, 255, cv2.THRESH_BINARY)[1]
 
