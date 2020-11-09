@@ -69,7 +69,7 @@ def saveFile(filepath, bin, n, size=256,verbose=False):
                     cv2.destroyAllWindows()
             else:
                 pass
-            print(np.max(img),np.min(img))
+
             # Label the output. Health:0, Parkinson:1.
             if "H" in name_splitted[0]:
                 cv2.imwrite('./processed_dataset/H%d.png'%n["cnt"], img * 255)
