@@ -8,7 +8,11 @@ import dataset as ds
 import numpy as np
 import sys
 
+
 bin = np.arange(256)
+if not ds.check_folder():
+    ds.makeDataset(bin,type="s")
+
 x,y =ds.readDataset(bin,type="s")
 
 #train_images, train_labels,test_images,test_labels =ds.readDataset(bin,type="s")

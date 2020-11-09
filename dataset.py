@@ -157,10 +157,14 @@ def check_folder():
     if os.path.isdir('./processed_dataset')==False:
         print("** Initializing the processed dataset.")
         os.mkdir('processed_dataset')
+        return False
+    else:
+        return True
 
 if __name__ == "__main__":
     bin = np.arange(256)
     makeDataset(bin, type="s")
+
     """x,y = readDataset(bin,type="s")
     print("Input shape (Number of samples, Y_size, X_size,  Channel): ", x.shape)
     print("Output shape (Number of samples, Output dimension): ", y.shape)"""
