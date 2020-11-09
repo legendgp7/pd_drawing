@@ -5,7 +5,7 @@ import os
 import cv2
 import configparser
 
-def readFile(input, output, filepath, bin, n, verbose=False):
+def readFile(input, output, filepath, bin, n, size=256,verbose=False):
 
     dir = os.listdir(filepath)
     for i in dir:
@@ -19,8 +19,8 @@ def readFile(input, output, filepath, bin, n, verbose=False):
                 print("%d images loaded..."% n["cnt"])
 
             img = cv2.imread(filepath + "/" + i, 0)
-            if img.shape[0] != 256 or img.shape[1] != 256:
-                img = cv2.resize(img, (256,256))
+            if img.shape[0] != size or img.shape[1] != size:
+                img = cv2.resize(img, (size,size))
             img = pp.binarization(img, bin)
 
             if verbose:
@@ -76,6 +76,7 @@ def makeDataset(bin, type="s"):
 
     x = np.array(x, dtype = np.float32)
     y = np.array(y, dtype = np.int64)
+    x = x.transpose((0,2,3,1))
     print("Dataset prepared (%d images)\n" % n["cnt"])
 
     return x, y
@@ -83,7 +84,7 @@ def makeDataset(bin, type="s"):
 
 if __name__ == "__main__":
     bin = np.arange(256)
-    x, y = makeDataset(bin)
+    x, y = makeDataset(bin,type="t")
 
-    print("Input shape (Number of samples, Channel, Y_size, X_size): ", x.shape)
+    print("Input shape (Number of samples, Y_size, X_size,  Channel): ", x.shape)
     print("Output shape (Number of samples, Output dimension): ", y.shape)
