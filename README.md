@@ -4,8 +4,8 @@ Install Python dependencies:
 <pre><code>Source install
 </code></pre>
 Demo for preprocessing("-s" is the saving flag):
-<pre><code>chmod 755 preprocess.py -s
-./preprocess.py 
+<pre><code>chmod 755 preprocess.py
+./preprocess.py -s
 </code></pre>
 Demo for reading the dataset:
 <pre><code>chmod 755 dataset.py
