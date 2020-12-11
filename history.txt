@@ -1,0 +1,184 @@
+ep=500, lr=0.30, max_depth=3, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6190. (Best = 0.6190)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.5238. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.5714. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=3, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=3, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=3, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=3, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=3, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=3, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=6, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=6, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=6, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=6, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=9, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.5238. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=9, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=9, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=9, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5238. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=9, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.15, max_depth=9, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.5714. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=3, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=3, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.5714. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=3, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=3, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5238. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=3, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=3, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.60, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.7619. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=6, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.7143. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=6, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=6, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=6, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=9, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6667. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=9, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=9, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.7143. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=9, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=9, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.4286. (Best = 0.7619)
+
+ep=500, lr=0.60, max_depth=9, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.6667. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=3, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=6, colsample_bytree=1.00: acc=0.6667. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=9, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=6, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=9, colsample_bytree=1.00: acc=0.6190. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=9, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.5714. (Best = 0.7619)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.5238. (Best = 0.5238)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.6190. (Best = 0.6190)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=0.70: acc=0.6190. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6667. (Best = 0.6667)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.7143. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=0.70: acc=0.6667. (Best = 0.7143)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6154. (Best = 0.6154)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.6154. (Best = 0.6154)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.6154. (Best = 0.6154)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=0.70: acc=0.6154. (Best = 0.6154)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=1.00: acc=0.6154. (Best = 0.6154)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.7692. (Best = 0.7692)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=1.00: acc=0.5385. (Best = 0.7692)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.20, ntree=3, colsample_bytree=0.70: acc=0.7692. (Best = 0.7692)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.8462. (Best = 0.8462)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.6154. (Best = 0.6154)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.6923. (Best = 0.6923)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.8125. (Best = 0.8125)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.6875. (Best = 0.6875)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=3, colsample_bytree=0.70: acc=0.5625. (Best = 0.5625)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=30, colsample_bytree=0.70: acc=0.7500. (Best = 0.7500)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=20, colsample_bytree=0.70: acc=0.6250. (Best = 0.6250)
+
+ep=500, lr=0.30, max_depth=6, gamma=0.05, ntree=20, colsample_bytree=0.70: acc=0.4375. (Best = 0.4375)
+

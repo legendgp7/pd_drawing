@@ -5,7 +5,7 @@ import os
 import cv2
 import configparser
 
-def readFile(input, output, filepath, bin, n, size=32,verbose=False):
+def readFile(input, output, filepath, bin, n, size=256,verbose=False):
 
     dir = os.listdir(filepath)
     for i in dir:
