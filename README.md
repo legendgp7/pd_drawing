@@ -1,4 +1,4 @@
-# pd_drawing
+# PD_Drawing
 #### Machine learning for the Parkinson's drawing dataset
 Install Python dependencies:
 <pre><code>Source install
